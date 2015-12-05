@@ -1,0 +1,33 @@
+{
+  "name": "sticky",
+  "version": "0.0.0",
+  "description": "The sticky server",
+  "scripts": {
+    "prestart": "confidence -c manifest.confidence.json --filter.env=$NODE_ENV > manifest.json",
+    "start": "rejoice -c manifest.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vdeturckheim/sticky.git"
+  },
+  "author": "Vladimir de Turckheim",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vdeturckheim/sticky/issues"
+  },
+  "homepage": "https://github.com/vdeturckheim/sticky#readme",
+  "dependencies": {
+    "confidence": "^1.4.2",
+    "good": "^6.4.0",
+    "good-console": "^5.2.0",
+    "good-file": "^5.1.1",
+    "rejoice": "^2.2.1",
+    "sticky_auth": "^0.1.1",
+    "sticky_private": "^0.1.0",
+    "sticky_public": "^0.1.0"
+  },
+  "devDependencies": {
+    "blipp": "^2.3.0"
+  },
+  "private": true
+}

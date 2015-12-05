@@ -1,0 +1,79 @@
+{
+  "server": {},
+  "connections": [
+    {
+      "routes": {
+        "cors": {
+          "origin": [
+            "*"
+          ]
+        }
+      },
+      "port": 3000
+    }
+  ],
+  "plugins": [
+    {
+      "good": [{
+        "options": {
+          "opsInterval": 10000,
+          "reporters": [
+            {
+              "reporter": "good-console",
+              "events": {
+                "ops": "*",
+                "request": "*",
+                "response": "*",
+                "log": "*",
+                "error": "*"
+              }
+            },
+            {
+              "reporter": "good-file",
+              "events": {
+                "ops": "*",
+                "request": "*",
+                "response": "*",
+                "log": "*",
+                "error": "*"
+              },
+              "config": "./logs/log.log"
+            }
+          ]
+        }
+      }]
+    },
+    {
+      "sticky_auth": [{
+        "routes": {
+          "prefix": "/api"
+        }
+      }]
+    },
+    {
+      "sticky_public": [{
+        "routes": {
+          "prefix": "/api/public"
+        }
+      }]
+    },
+    {
+      "sticky_private": [{
+        "routes": {
+          "prefix": "/api/private"
+        }
+      }]
+    },
+    {
+      "$filter": "env",
+      "dev": {
+        "blipp": [{
+          "options": {
+            "showAuth": true,
+            "showStart": true
+          }
+        }]
+      }
+    }
+  ]
+}
