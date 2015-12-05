@@ -10,3 +10,8 @@ The whole project is made of:
 # Disclaimer
 
 This is jus an example of how I use `glue` multiple time in my usual workflow. Any comments would be welcomed !
+
+# Usage
+
+* `$ export NODE_ENV=dev` (optional, but will enable `blipp`).
+* `$ npm start`
